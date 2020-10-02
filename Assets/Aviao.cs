@@ -6,6 +6,9 @@ public class Aviao : MonoBehaviour {
 
     Rigidbody2D fisica;
 
+    [SerializeField]
+    private float forca = 6;
+
     private void Awake()
     {
         this.fisica = this.GetComponent<Rigidbody2D>();
@@ -20,7 +23,7 @@ private void Update () {
 
 private void Impulsionar()
 {
-    this.fisica.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+    this.fisica.AddForce(Vector2.up * this.forca, ForceMode2D.Impulse);
 }
 
 }
